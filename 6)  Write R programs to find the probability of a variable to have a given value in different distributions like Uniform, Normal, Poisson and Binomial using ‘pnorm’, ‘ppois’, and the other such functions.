@@ -1,0 +1,53 @@
+6) AIM:
+Write R programs to find the probability of a variable to have a given value in different distributions
+like Uniform, Normal, Poisson and Binomial using ‘pnorm’, ‘ppois’, and the other suchfunctions.
+
+
+PROGRAM:
+
+rm(list=ls())
+options(digits=4)
+## initialize ##
+N=10 # Number of MC points
+points &lt;- data.frame(x=numeric(N),y=numeric(N))
+pi_est &lt;- numeric(N)
+inner &lt;-0
+outer &lt;-0
+## BUILD Circle ##
+circle &lt;- data.frame(x=1:360,y=1:360)
+for(i in 1:360)
+{
+circle$x[i] &lt;-0.5+cos(i/180*pi)*0.5
+circle$y[i] &lt;-0.5+sin(i/180*pi)*0.5
+}
+## SIMULATE ##
+pdf(&#39;MCpiT.pdf&#39;)
+layout(matrix(c(2,3,1,1), 2, 2, byrow = TRUE))
+for(i in 1:N)
+{
+# Draw a new point at random
+points$x[i] &lt;-runif(1)
+points$y[i] &lt;-runif(1)
+# Check if the point is inside
+# the circle
+if( (points$x[i]-0.5)^2 + (points$y[i]-0.5)^2 &gt; 0.25 )
+{
+outer=outer+1
+}else
+{
+inner=inner+1
+}
+current_pi&lt;-(inner/(outer+inner))/(0.25)
+pi_est[i]= current_pi
+print(current_pi)
+
+par(mar = c(5, 4, 4, 2),pty=&#39;m&#39;)
+plot(pi_est[1:i],type=&#39;l&#39;,
+main=i,col=&quot;blue&quot;,ylim=c(0,5),
+lwd=2,xlab=&quot;# of points drawn&quot;,ylab=&quot;estimate&quot;)
+# Draw true pi for reference
+abline(pi,0,col=&quot;red&quot;,lwd=2)
+par(mar = c(1, 4, 4, 1),pty=&#39;s&#39;)
+frame() #blank
+}
+dev.off()
