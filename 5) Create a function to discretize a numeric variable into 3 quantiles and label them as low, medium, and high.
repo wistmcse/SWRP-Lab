@@ -1,0 +1,19 @@
+5) AIM:
+Create a function to discretize a numeric variable into 3 quantiles and label them as low, medium, and
+high. Apply it on each attribute of iris dataset to create a new data frame. ‘discrete_iris’ with
+Categorical variables and the class label.
+
+
+PROGRAM:
+
+library(arules)
+irisDisc &lt;- discretizeDF (iris,methods=list(
+petal.length = list(method = &quot;frequency&quot;,breaks=3, labels = c(&quot;low&quot;,&quot;medium&quot;,&quot;high&quot;)),
+petal.width = list(method = &quot;frequency&quot;,breaks=3, lables = c(&quot;low&quot;,&quot;medium&quot;,&quot;high&quot;)),
+sepal.width = list(method = &quot;frequency&quot;,breaks=3, lables = c(&quot;low&quot;,&quot;medium&quot;,&quot;high&quot;)),
+sepal.length = list(method = &quot;frequency&quot;,breaks=3, lables = c(&quot;low&quot;,&quot;medium&quot;,&quot;high&quot;)),
+),
+default = list(method = &quot;none&quot;)
+)
+print(head(irisDisc))
+print(tail(irisDisc))
