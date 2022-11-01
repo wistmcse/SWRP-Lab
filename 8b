@@ -1,0 +1,8 @@
+8b)
+# Load dplyr library
+library(dplyr)
+# Main code
+data&lt;-mtcars
+sample &lt;- head(data)
+sample %&gt;% group_by(hp) %&gt;%
+summarize_at(c(&#39;cyl&#39;,&#39;mpg&#39;),mean)
