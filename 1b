@@ -1,0 +1,18 @@
+1b) AIM:
+Create df3 by merging df1 by column1 with another data frame df2 containing 20 observations and 2
+variables column4 with letters, column5 with sequence of 20 real numbers from 0 to 1 in equal steps.
+
+
+
+PROGRAM:
+
+df1 = data.frame(
+df1col1 = head(letters,20))
+df2 = data.frame(
+df2col2 = c(1:20),
+df2col3 = tail(letters,20))
+df3col4 = head(letters,20)
+df3col5 = seq(0.05,1,by = 0.05)
+df3 = data.frame(df1,df2,df3col4,df3col5)
+
+print(df3)
