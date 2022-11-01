@@ -1,0 +1,14 @@
+4. AIM:
+Create a data frame with 10 observations and 3 variables and add new rows and columns to
+it using ‘rbind’ and ‘cbind’ function.
+
+
+PROGRAM:
+
+df1 = data.frame(
+c_letters = letters[1:10],
+s_letters = letters[1:10],
+values = c(1:10)
+)
+print(cbind(df1,c(11:20)))
+print(rbind(df1,c(100,200,300)))
