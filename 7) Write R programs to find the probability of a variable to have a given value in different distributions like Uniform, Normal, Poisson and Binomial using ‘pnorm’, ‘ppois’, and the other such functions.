@@ -1,0 +1,16 @@
+7)AIM:
+Write R programs to find the probability of a variable to have a given value in different distributions
+like Uniform, Normal, Poisson and Binomial using ‘pnorm’, ‘ppois’, and the other such functions.
+
+
+PROGRAM:
+
+variable = c(1:20)
+w &lt;- punif(4,min =1,max=20)
+x&lt;- pnorm(variable,mean = 2.5,sd=2)
+y&lt;-pbinom(1,20,0.4)
+z&lt;-ppois(4,lambda=10)
+print(w)
+print(x)
+print(y)
+print(z)
