@@ -1,0 +1,12 @@
+1a) AIM:
+To create a data frame df1 to contain 10 observations and 3 variables, column with letters, column 2
+with random numbers and column 3 with first 10 natural numbers.
+
+
+Solution :  
+
+df1 = data.frame(
+letters = c(&quot;R&quot;,&quot;P&quot;,&quot;R&quot;,&quot;0&quot;,&quot;G&quot;,&quot;R&quot;,&quot;A&quot;,&quot;M&quot;,&quot;I&quot;,&quot;N&quot;),
+random = floor(runif(10,1,10)),
+natural = c(1:10))
+print(df1)
