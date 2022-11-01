@@ -1,0 +1,8 @@
+2a) Create h1 to contain 1000 random numbers, distributed in normal distribution and plot
+the histogram with colors.
+
+
+PROGRAM:
+
+h1 &lt;- rnorm(1000)
+hist(h1,main = &quot;Normal distribution&quot;,col = &quot;pink&quot;)
