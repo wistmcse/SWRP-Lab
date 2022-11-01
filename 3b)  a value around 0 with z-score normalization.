@@ -1,0 +1,11 @@
+3b) AIM: a value around 0 with z-score normalization.
+
+PROGRAM:
+
+zscore_norm &lt;- function(x){
+m = mean(x)
+s =sd(x)
+x.z = (x-m)/s
+}
+iris_norm &lt;- as.data.frame(lapply(iris[1:4],zscore_norm))
+print(head(iris_norm))
