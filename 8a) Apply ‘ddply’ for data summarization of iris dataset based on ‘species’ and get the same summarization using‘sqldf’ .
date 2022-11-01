@@ -1,0 +1,15 @@
+8)AIM:
+Apply ‘ddply’ for data summarization of iris dataset based on ‘species’ and get the same
+summarization using‘sqldf’ .
+
+
+PROBLEM:
+
+# Load dplyr library
+library(dplyr)
+# Main code
+data &lt;- mtcars
+# Loading starting 6 observations
+sample &lt;- head(data)
+# Caculating mean value.
+sample %&gt;% summarize_all(mean)
