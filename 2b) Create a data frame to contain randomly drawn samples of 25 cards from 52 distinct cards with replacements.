@@ -1,0 +1,11 @@
+2b) AIM:
+Create a data frame to contain randomly drawn samples of 25 cards from 52 distinct cards with
+replacements. Use ‘table’ function to find the ‘duplicated’ and tabulate the list of cards and their
+frequency of occurrence in the sample
+
+
+PROGRAM:.
+
+x = floor(runif(13,1,13))
+xt = table(sample(x,25,replace=TRUE))
+print(xt)
