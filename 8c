@@ -1,0 +1,9 @@
+8C) 
+
+# Laod dplyr librarry
+library(dplyr)
+# Main code
+data&lt;-mtcars
+z&lt;- head(data)
+z %&gt;% group_by(hp) %&gt;%
+summarize_if(is.numeric, mean)
