@@ -1,0 +1,19 @@
+1d) AIM:
+Rename observations whose column1 value is ‘D’ from data framedf3.
+
+
+PROGRAM:
+df1 = data.frame(
+df1col1 = head(letters,20)
+)
+df2 = data.frame(
+df2col2 = c(1:20),
+
+df2col3 = tail(letters,20)
+)
+df3col4 = head(letters,20)
+df3col5 = seq(0.05,1,by = 0.05)
+df3 = data.frame(df1,df2,df3col4,df3col5)
+print (df3)
+row.names(df1) [4] &lt;-&quot;s&quot;
+df3 = data.frame
